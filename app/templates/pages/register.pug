@@ -1,0 +1,30 @@
+extends ../layouts/default.pug
+
+block variables
+ -var pageTitle='Создать аккаунт'
+
+block content
+    .ui-base-block.auth
+        h2.title Создать аккаунт
+        .ui-base-block-group.row
+            .ui-base-element.form-main
+                .ui-auth-notice
+                    | Создайте аккаунт, для того чтобы продолжить пользоваться сайтом и получить доступ для игры на серверах
+                form.ui-base-form(action="/auth", method="POST")
+                    label.ui-form-group
+                        input(type="text" required)
+                        span.title Ваш игровой ник
+                    label.ui-form-group
+                        input(type="email" required)
+                        span.title Электронная почка
+                    label.ui-form-group
+                        input(type="password", required)
+                        span.title Ваш пароль
+                    button.ui-button(type="submit") Создать аккаунт
+            .ui-base-element.form-register-desc
+                +icon('user-check')
+                .description 
+                    .text Уже есть аккаунт?
+                        a(href="/auth.html") Авторизайтесь!
+                    small Аккаунт нужен для того, чтобы использовать игровой лаунчер и систему скинов
+                

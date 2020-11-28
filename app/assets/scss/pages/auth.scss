@@ -11,7 +11,7 @@
 
     .ui-base-element.form-main {
         width: 60%;
-        height: 400px;
+        min-height: 400px;
 
         @include screen('sm', 'max') {
             width: 100%;
