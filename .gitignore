@@ -1,0 +1,8 @@
+node_modules
+dev
+package-lock.json
+yarn.lock
+*.log
+.idea
+app/.idea
+.publish

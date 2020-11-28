@@ -1,0 +1,40 @@
+extends ../layouts/landing.pug
+
+block variables
+ -var pageTitle='Новости #1'
+
+block content
+    .ui-base-block.news-full
+        h2.title Новость #1
+        .ui-base-block-group.row
+            .ui-base-element.news-full
+                .description Lorem ipsum dolor sit amet consectetur adipisicing elit. A suscipit repellat fugit vitae magni ipsam alias voluptatem ipsum quis dolores culpa eveniet, dolor recusandae, quia consequuntur molestiae numquam non facere? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore delectus recusandae obcaecati, reiciendis, nisi iste, id dicta veritatis cum ratione maxime numquam quibusdam? Sed consequatur alias cupiditate quae eos assumenda.<br>orem ipsum dolor sit amet consectetur adipisicing elit. A suscipit repellat fugit vitae magni ipsam alias voluptatem ipsum quis dolores culpa eveniet, dolor recusandae, quia consequuntur molestiae numquam non facere? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore delectus recusandae obcaecati, reiciendis, nisi iste, id dicta veritatis cum ratione maxime numquam quibusdam? Sed consequatur alias cupiditate quae eos assumenda.<br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. A suscipit repellat fugit vitae magni ipsam alias voluptatem ipsum quis dolores culpa eveniet, dolor recusandae, quia consequuntur molestiae numquam non facere? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore delectus recusandae obcaecati, reiciendis, nisi iste, id dicta veritatis cum ratione maxime numquam quibusdam? Sed consequatur alias cupiditate quae eos assumenda.
+            .ui-base-element.news-full-info
+                .block.title Статистика новости
+                .block
+                    .icon
+                        +icon('messages')
+                    .count 65
+                .block
+                    .icon
+                        +icon('eye')
+                    .count 120
+                .block
+                    .icon
+                        +icon('user') 
+                    .count reygasai
+    .ui-base-block.news-comments
+        h2.title Комментарии
+        .ui-base-block-group.column
+            each name in ['Player', 'reygasai', 'Notch', 'Dinnerbone']
+                .ui-base-element.comment
+                    .user
+                        img(src="/assets/media/images/simple-head.png", alt="#{name}")
+                    .content
+                        .header-group
+                            .name #{name}
+                            .time 5 июня 2020 в 11:20
+                        .description Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab eaque necessitatibus totam, perspiciatis eum impedit. Tenetur laboriosam, maxime nobis eligendi repellendus dicta cum suscipit ut eum! Veritatis, nisi doloremque. Enim?
+    .ui-notice-auth
+        +icon('shield')
+        .description Авторизуйтесь, для того чтобы оставлять комментарии!

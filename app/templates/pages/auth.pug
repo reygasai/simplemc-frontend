@@ -1,0 +1,24 @@
+extends ../layouts/default.pug
+
+block variables
+ -var pageTitle='Авторизация'
+
+block content
+    .ui-base-block.auth
+        h2.title Авторизация
+        .ui-base-block-group.row
+            .ui-base-element.form-main
+                form.ui-base-form(action="/auth", method="POST")
+                    label.ui-form-group
+                        input(type="text" required)
+                        span.title Ваш игровой ник
+                    label.ui-form-group
+                        input(type="password", required)
+                        span.title Ваш пароль
+                    button.ui-button(type="submit") Войти в аккаунт
+            .ui-base-element.form-register-desc
+                +icon('user-plus')
+                .description 
+                    .text Нет аккаунта? Создайте его!
+                    small Аккаунт нужен для того, чтобы использовать игровой лаунчер и систему скинов
+                

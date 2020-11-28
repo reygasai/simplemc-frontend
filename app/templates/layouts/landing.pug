@@ -1,0 +1,32 @@
+block variables
+include ../mixins/mixins
+include ../blocks/header
+include ../blocks/footer
+
+doctype html
+html(lang="ru")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1, shrink-to-fit=no")
+        title
+            if pageTitle == ''
+                | SimpleMC - CMS system!
+            else
+                | #{pageTitle} » SimpleMC
+
+        meta(name="msapplication-tap-highlight", content="no")
+        meta(name="renderer", content="webkit")
+        link(rel="stylesheet", href="assets/css/libs.min.css")
+        link(rel="stylesheet", href="assets/css/main.css")
+
+        block stylesheet
+        script(src="assets/js/ie.js")
+    body
+        .ui-container
+            +header(false)
+            .ui-content
+                .main-content
+                    block content
+            +footer()
+        script(src="assets/js/main.js")
+        block scripts

@@ -1,0 +1,73 @@
+@import '../ui/block';
+@import '../ui/buttons';
+@import '../ui/pagination';
+@import '../ui/notice';
+@import '../ui/form';
+
+@import '../blocks/header';
+@import '../blocks/monitoring';
+@import '../blocks/footer';
+
+@import '../pages/index';
+@import '../pages/news';
+@import '../pages/auth';
+
+body {
+    position: relative;
+    &.active-burger::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: #333;
+        content: '';
+        opacity: 0.7;
+        z-index: 10;
+        pointer-events: none;
+        transition: 0.2s;
+    }
+}
+
+.ui-container {
+    max-width: $container-width;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    min-height: 550px;
+}
+
+.ui-content {
+    margin-top: 50px;
+    display: flex;
+
+    @include screen('lg', 'max') {
+        flex-direction: column-reverse;
+    }
+
+    & > .main-content {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    & > .left-content {
+        max-width: 30%;
+        width: 100%;
+        padding-right: 30px;
+
+        @include screen('lg', 'max') {
+            max-width: 100%;
+            padding-right: 0px;
+        }
+    }
+
+    & > .right-content {
+        max-width: 70%;
+        width: 100%;
+
+        @include screen('lg', 'max') {
+            max-width: 100%;
+        }
+    }
+}

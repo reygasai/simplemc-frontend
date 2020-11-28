@@ -1,0 +1,58 @@
+.ui-base-block {
+    & > .title {
+        display: inline-block;
+        font-family: $font-family-bold;
+        margin-bottom: 20px;
+        position: relative;
+        z-index: 1;
+
+        @keyframes lineAnimation {
+            100% { 
+                width: 100%; 
+            }
+
+            30% { 
+                width: 30%; 
+            }
+
+            60% { 
+                width: 50%; 
+            }
+
+            10% { 
+                width: 100%; 
+            }
+        }
+
+        &::after {
+            position: absolute;
+            z-index: -1;
+            left: 0;
+            bottom: 0;
+            height: 10px;
+            width: 100%;
+            content: '';
+            display: block;
+            background: $color-border-header;
+            opacity: 0.5;
+            animation: lineAnimation 3s ease-in-out infinite;
+        }
+    }
+
+    & > .ui-base-block-group {
+        display: flex;
+
+        &.row {
+            flex-direction: row;
+        }
+
+        &.column {
+            flex-direction: column;
+        }
+
+        & > .ui-base-element {
+            border: 1px solid $color-border-base-block;
+            padding: 20px;
+        }
+    }
+}

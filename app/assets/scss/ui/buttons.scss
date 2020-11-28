@@ -1,0 +1,12 @@
+.ui-button {
+    padding: 5px 10px;
+    background: $background-button-block;
+    border: 1px solid $color-border-button;
+    display: flex;
+    align-items: center;
+    transition: 0.2s;
+
+    &:hover {
+        background: $background-button-block-hover;
+    }
+}

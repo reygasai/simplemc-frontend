@@ -1,0 +1,12 @@
+mixin monitoring()
+    .ui-base-block.monitoring
+        .ui-base-block-group.column
+            each name in ['HiTech', 'Magic', 'Event', 'RPG']
+                .ui-base-element.monitoring-element(data-percent="56")
+                    .left-group
+                        .online 56%
+                    .right-group
+                        .header-group
+                            .title #{name}
+                            .online 56 игроков из 100  
+                        .description Крутой сервер, бля буду

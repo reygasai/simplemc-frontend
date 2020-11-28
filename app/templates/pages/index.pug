@@ -1,0 +1,45 @@
+extends ../layouts/default.pug
+
+block variables
+ -var pageTitle=''
+
+block content
+    .ui-base-block.news-short
+        h2.title Новости проекта
+        .ui-base-block-group.column
+            each name in ['Новость #1', 'Обновление #1', 'Что-то крутое', 'Что-то очень крутое', 'Что-то мегакрутое']
+                .ui-base-element.news-short
+                    .content-group
+                        .header-group
+                            .title #{name}
+                            .description Lorem ipsum dolor sit amet consectetur adipisicing elit. A suscipit repellat fugit vitae magni ipsam alias voluptatem ipsum quis dolores culpa eveniet, dolor recusandae, quia consequuntur molestiae numquam non facere? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore delectus recusandae obcaecati, reiciendis, nisi iste, id dicta veritatis cum ratione maxime numquam quibusdam? Sed consequatur alias cupiditate quae eos assumenda.
+                        .footer-group
+                            a.full(href="/news.html") Подробнее
+                            .info
+                                .user.block
+                                    +icon('user') 
+                                    | reygasai
+                                .time.block
+                                    +icon('clock')
+                                    |Вчера, в 23:30
+                    .info-group
+                        .block
+                            .icon
+                                +icon('messages')
+                            .count 65
+                        .block
+                            .icon
+                                +icon('eye')
+                            .count 120
+    .ui-pagination
+        a.back.ui-button(href="#")
+            +icon('arrow-back')
+            span Назад
+
+        each name in [2, 3, 4, 5, 6]
+            a.ui-button(href="#")
+                span #{name}
+
+        a.next.ui-button(href="#")
+            span Вперед
+            +icon('arrow-next')

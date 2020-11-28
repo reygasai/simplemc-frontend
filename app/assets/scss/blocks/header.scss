@@ -1,0 +1,270 @@
+.ui-header {
+    display: flex;
+    align-items: stretch;
+    border: 1px solid $color-border-header;
+    background: $background-header-block;
+    margin-top: 20px;
+    position: relative;
+    z-index: 20;
+
+    button.burger {
+        width: 30px;
+        height: 25px;
+        position: absolute;
+        margin-right: 9px;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        display: none;
+
+        @include screen('md', 'max') {
+            display: block;
+        }
+
+        @mixin content-burger {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: #000;
+            content: '';
+            border-radius: 5px;
+            transition: 0.2s;
+        }
+
+        span {
+            &:first-child {
+                @include content-burger;
+                top: 0;
+            }
+
+            &:last-child {
+                @include content-burger;
+                bottom: 0;
+            }
+        }
+
+        &::before {
+            @include content-burger;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 1;
+        }
+
+        @include screen('md', 'max') {
+            &.active {
+                &::before {
+                    opacity: 0;
+                }
+
+                span {
+                    &:first-child {
+                        left: -1px;
+                        top: 0px;
+                        transform-origin: right top;
+                        transform: rotate(-43deg);
+                    }
+        
+                    &:last-child {
+                        left: -2px;
+                        bottom: 2px;
+                        transform-origin: right bottom;
+                        transform: rotate(47deg);
+                    }
+                }
+            }
+        }
+    }
+
+    & > a.logotype {
+        padding: 9px;
+        display: flex;
+        align-items: center;
+        border-right: 1px solid $color-border-header;
+
+        @include screen('md', 'max') {
+            border-right: unset;
+        }
+
+        & > img {
+            margin-right: 10px;
+            width: auto;
+            height: 40px;
+            top: 50%;
+        }
+
+        & > span {
+            font-family: $font-family-bold;
+        }
+    }
+
+    & > .navigation-group {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+
+        @include screen('md', 'max') {
+            position: absolute;
+            top: 59px;
+            flex-direction: column;
+            background: $background-header-block;
+            z-index: 999;
+            border: 1px solid $color-border-header;
+            border-top: unset;
+
+            opacity: 0;
+            pointer-events: none;
+
+            width: calc(100% + 2px);
+            left: -1px;
+
+            transition: 0.2s opacity;
+        }
+
+        @include screen('md', 'max') {
+            &.display {
+                opacity: 1;
+                pointer-events: all;
+            }
+        }
+
+        & > .navigation {
+            @include screen('md', 'max') {
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+                flex-wrap: wrap;
+            }
+            a {
+                padding: 20px;
+                border-right: 1px solid $color-border-header;
+                transition: 0.2s;
+                position: relative;
+
+                @include screen('md', 'max') {
+                    width: 100%;
+                    border-right: unset;
+                    border-bottom: 1px solid $color-border-header;
+                }
+    
+                &:hover {
+                    background: $background-hover-color;
+                }
+            }
+        }
+
+        & > .user {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            padding-right: 20px;
+            padding-left: 20px;
+            border-left: 1px solid $color-border-header;
+            position: relative;
+            height: 100%;
+
+            @include screen('md', 'max') {
+                width: 100%;
+                padding-right: 0px;
+                padding-left: 0px;
+                border-left: unset;
+            }
+            @include screen('md', 'max') {
+                button.login {
+                    padding: 10px 20px;
+                }
+
+                a.login {
+                    padding: 20px 20px;
+                }
+            }
+    
+            .login {
+                display: flex;
+                align-items: center;
+                height: 100%;
+
+                @include screen('md', 'max') {
+                    width: 100%;
+                    position: relative;
+
+                    & > .ui-icon {
+                        position: absolute;
+                        right: 0;
+                        margin-right: 10px;
+                    }
+                }
+
+                & > .head {
+                    border: 1px solid $color-border-header;
+                    width: 40px;
+                    height: 40px;
+    
+                    margin-right: 10px;
+    
+                    & > img {
+                        width: auto;
+                        height: 100%;
+                    }
+                }
+    
+                & > .info {
+                    margin-right: 10px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                }
+            }
+    
+            .menu {
+                opacity: 0;
+                position: absolute;
+                display: flex;
+                flex-direction: column;
+                width: calc(100% + 2px);
+                top: 0px;
+                border: 1px solid $color-border-header;
+                border-top: 1px solid transparent;
+                transition: 0.2s;
+                pointer-events: none;
+                background: $background-header-block;
+
+                @include screen('md', 'max') {
+                    border: unset;
+                }
+
+                &.active {
+                    opacity: 1;
+                    top: 59px;
+                    pointer-events: all;
+                }
+    
+                & > a {
+                    padding: 10px 15px;
+                    @include screen('md', 'max') {
+                        padding: 20px;
+                        border-right: 1px solid $color-border-header;
+                        border-left: 1px solid $color-border-header;
+
+                        &:first-child {
+                            border-top: 1px solid $color-border-header;
+                        }
+
+                        &:last-child {
+                            border-bottom: 1px solid $color-border-header;
+                        }
+                    }
+    
+                    &:hover {
+                        background: $background-hover-color;
+                    }
+                    
+                    &:not(:last-child) {
+                        border-bottom: 1px solid $color-border-header;
+                    }
+                }
+            }
+        }
+    }
+}

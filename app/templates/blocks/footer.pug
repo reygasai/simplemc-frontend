@@ -1,0 +1,13 @@
+mixin footer()
+    footer.ui-footer
+        .header-group
+            a.right-group(href="/")
+                img(src="/assets/media/images/logotype.png", alt="logotype")
+                span SimpleMC
+            .left-group
+                each name in ['Правила', 'О игре', 'Скачать игру', 'Cервера']
+                    a(href="#") #{name}
+        .footer-group
+            .copiright Сделано 
+                a(href="https://vk.com/reygasai") котиком
+                |  для SimpleMC 

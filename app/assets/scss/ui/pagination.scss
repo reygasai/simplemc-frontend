@@ -1,0 +1,19 @@
+.ui-pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+
+    .ui-button {
+        &:first-child {
+            margin-right: 10px;
+        }
+
+        &.active {
+            font-weight: 700;
+        }
+
+        &:not(:last-child) {
+            margin-right: 10px;
+        }
+    }
+}

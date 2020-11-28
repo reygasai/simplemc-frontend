@@ -1,0 +1,101 @@
+.ui-icon {
+    font-size: 10px;
+}
+
+.ui-icon:before {
+    content:' ';
+    vertical-align:middle;
+    display: inline-block;
+    background-image: url("../media/sprite.svg");
+    background-repeat: no-repeat;
+    background-size: 2.4em 21.6em;
+}
+
+.no-svg .ui-icon:before {
+    background-image: url("../media/sprite.png");
+}
+
+
+
+  .ui-icon.ui-icon-arrow-back:before {
+      background-position: 0em 0em;
+      width: 2.4em;
+      height: 2.4em;
+  }
+
+
+
+
+  .ui-icon.ui-icon-arrow-down:before {
+      background-position: 0em -2.4em;
+      width: 2.4em;
+      height: 2.4em;
+  }
+
+
+
+
+  .ui-icon.ui-icon-arrow-next:before {
+      background-position: 0em -4.8em;
+      width: 2.4em;
+      height: 2.4em;
+  }
+
+
+
+
+  .ui-icon.ui-icon-clock:before {
+      background-position: 0em -7.2em;
+      width: 2.4em;
+      height: 2.4em;
+  }
+
+
+
+
+  .ui-icon.ui-icon-eye:before {
+      background-position: 0em -9.6em;
+      width: 2.4em;
+      height: 2.4em;
+  }
+
+
+
+
+  .ui-icon.ui-icon-messages:before {
+      background-position: 0em -12em;
+      width: 2.4em;
+      height: 2.4em;
+  }
+
+
+
+
+  .ui-icon.ui-icon-shield:before {
+      background-position: 0em -14.4em;
+      width: 2.4em;
+      height: 2.4em;
+  }
+
+
+
+
+  .ui-icon.ui-icon-user:before {
+      background-position: 0em -16.8em;
+      width: 2.4em;
+      height: 2.4em;
+  }
+
+
+
+
+  .ui-icon.ui-icon-user-plus:before {
+      background-position: 0em -19.2em;
+      width: 2.4em;
+      height: 2.4em;
+  }
+
+
+
+
+

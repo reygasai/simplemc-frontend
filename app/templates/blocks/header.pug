@@ -1,0 +1,31 @@
+mixin header(userAuth = true)
+    header.ui-header
+        a.logotype(href="/")
+            img(src="/assets/media/images/logotype.png", alt="logotype")
+            span SimpleMC
+        .navigation-group
+            .navigation
+                each name in ['Правила', 'О игре', 'Скачать игру', 'Cервера']
+                    a(href="#") #{name}
+            if userAuth
+                .user
+                    button.login
+                        .head
+                            img(src="/assets/media/images/user-icon.png", alt="user head")
+                        .info
+                            .name reygasai
+                            .group Администратор
+                        +icon('arrow-down')
+                    .menu
+                        a(href="#") Игровой профиль
+                        a(href="#") Заявки
+                        a(href="#") Пожертвования
+                        a.exit(href="#") Выйти из акканта
+            else
+                .user
+                    a.login(href="/auth.html") 
+                        +icon('user')
+                        span Войти в аккаунт
+        button.burger
+            span
+            span

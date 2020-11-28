@@ -1,0 +1,35 @@
+.ui-base-block.auth {
+    align-items: flex-start;
+
+    & > .ui-base-block-group {
+        align-items: center;
+    }
+
+    .ui-base-element.form-main {
+        width: 60%;
+        height: 400px;
+    }
+
+    .ui-base-element.form-register-desc {
+        width: 40%;
+        border-left: unset;
+        height: 360px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        & > .ui-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        & > .description {
+            text-align: center;
+            & > .text {
+                font-size: 20px;
+                margin-bottom: 10px;
+            }
+        }
+    }
+}
