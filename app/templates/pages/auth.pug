@@ -8,6 +8,8 @@ block content
         h2.title Авторизация
         .ui-base-block-group.row
             .ui-base-element.form-main
+                .ui-auth-notice
+                    | Авторизуйтесь, для того чтобы продолжить пользоваться сайтом
                 form.ui-base-form(action="/auth", method="POST")
                     label.ui-form-group
                         input(type="text" required)
@@ -19,6 +21,7 @@ block content
             .ui-base-element.form-register-desc
                 +icon('user-plus')
                 .description 
-                    .text Нет аккаунта? Создайте его!
+                    .text Нет аккаунта?
+                        a(href="/register.html") Создайте его!
                     small Аккаунт нужен для того, чтобы использовать игровой лаунчер и систему скинов
                 

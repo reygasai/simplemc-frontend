@@ -8,7 +8,7 @@
     display: inline-block;
     background-image: url("../media/sprite.svg");
     background-repeat: no-repeat;
-    background-size: 2.4em 21.6em;
+    background-size: 2.4em 24em;
 }
 
 .no-svg .ui-icon:before {
@@ -89,8 +89,17 @@
 
 
 
-  .ui-icon.ui-icon-user-plus:before {
+  .ui-icon.ui-icon-user-check:before {
       background-position: 0em -19.2em;
+      width: 2.4em;
+      height: 2.4em;
+  }
+
+
+
+
+  .ui-icon.ui-icon-user-plus:before {
+      background-position: 0em -21.6em;
       width: 2.4em;
       height: 2.4em;
   }
