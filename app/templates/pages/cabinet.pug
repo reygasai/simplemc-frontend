@@ -1,0 +1,15 @@
+extends ../layouts/landing.pug
+
+block variables
+ -var pageTitle='Личный кабинет reygasai'
+
+block content
+    .ui-base-block.cabinet
+        h2.title Личный кабинет reygasai
+        .ui-base-block-group.row
+            .ui-base-element.left
+                canvas#skin-container(skin-path="assets/media/images/skin.png", cloak-path="assets/media/images/cloak.png")
+                .controls
+                    button#walk
+                    button#run
+                    button#fly

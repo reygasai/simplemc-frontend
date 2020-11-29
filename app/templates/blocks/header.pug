@@ -9,7 +9,7 @@ mixin header(userAuth = true)
                     a(href="#") #{name}
             if userAuth
                 .user
-                    button.login
+                    button.login.panel
                         .head
                             img(src="/assets/media/images/user-icon.png", alt="user head")
                         .info
@@ -26,6 +26,6 @@ mixin header(userAuth = true)
                     a.login(href="/auth.html") 
                         +icon('user')
                         span Войти в аккаунт
-        button.burger
+        button.burger.panel
             span
             span

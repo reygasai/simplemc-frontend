@@ -37,7 +37,6 @@ gulp.task('scss', function () {
   return gulp.src([
       '!app/assets/scss/**/*.scss',
       'app/assets/scss/main.scss',
-      'app/assets/scss/ie.scss'
     ])
     .pipe(sass())
     .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], {
