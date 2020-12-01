@@ -25,6 +25,14 @@ block content
                     .count reygasai
     .ui-base-block.news-comments
         h2.title Комментарии
+        .ui-notice-auth
+            +icon('shield')
+            .description Авторизуйтесь, для того чтобы оставлять комментарии!
+        form.ui-base-form(action="/" method="POST")
+            label.ui-form-group.new-comment
+                textarea(type="text" rows="10" required)
+                span.title Ваш комментарий
+            button.ui-button(type="submit") Добавить комментарий
         .ui-base-block-group.column
             each name in ['Player', 'reygasai', 'Notch', 'Dinnerbone']
                 .ui-base-element.comment
@@ -35,6 +43,3 @@ block content
                             .name #{name}
                             .time 5 июня 2020 в 11:20
                         .description Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab eaque necessitatibus totam, perspiciatis eum impedit. Tenetur laboriosam, maxime nobis eligendi repellendus dicta cum suscipit ut eum! Veritatis, nisi doloremque. Enim?
-    .ui-notice-auth
-        +icon('shield')
-        .description Авторизуйтесь, для того чтобы оставлять комментарии!

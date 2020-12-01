@@ -34,7 +34,11 @@ label.ui-form-group {
         transition: 0.2s;
     }
 
-    & > input {
+    & > textarea + span.title{
+        top: 33px;
+    }
+
+    & > input, & > textarea {
         padding: 10px;
         padding-top: 15px;
         margin-top: 10px;

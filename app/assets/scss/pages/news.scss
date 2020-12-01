@@ -10,6 +10,7 @@
         .ui-base-element.news-full {
             margin-right: 30px;
             line-height: 22px;
+            width: 100%;
 
             @include screen('md', 'max') {
                 margin-right: 0px;
@@ -73,6 +74,10 @@
 }
 
 .ui-base-block.news-comments {
+    form.ui-base-form {
+        margin-bottom: 45px;
+    }
+
     .ui-base-element.comment {
         display: flex;
 
