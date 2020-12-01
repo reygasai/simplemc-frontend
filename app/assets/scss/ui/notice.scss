@@ -16,5 +16,12 @@
         color: #716868;
         font-size: 20px;
         text-align: center;
+
+        & > ul > li {
+            font-size: 18px;
+            &:not(:last-child) {
+                margin-bottom: 4px;
+            }
+        }
     }
 }

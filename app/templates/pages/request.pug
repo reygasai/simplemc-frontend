@@ -1,0 +1,48 @@
+extends ../layouts/landing.pug
+
+block variables
+ -var pageTitle='Заявка на сервер'
+
+block content
+    .ui-base-block.request
+        h2.title Заявка на сервер
+        .ui-base-block-group.column
+            .ui-base-element.request
+                .ui-notice-auth
+                    | Тут описание почему так вот нужно делать, зачем эти заявки и пр. Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora error obcaecati enim accusantium mollitia fuga impedit ullam maxime aliquid quaerat expedita quam, doloremque maiores debitis exercitationem est necessitatibus, autem qui!
+                .ui-notice-auth
+                    +icon('alert-octagon')
+                    .description 
+                        ul
+                            li Вы не заполнили email
+                            li Вы не заполнили nickname
+                            li Вы не заполнили информацию о себе
+                            li Вы не заполнили почему вы хотите играть у нас
+                            li Вы не заполнили откуда вы о нас узнали
+                            li Вы не заполнили контакты для связи с вами
+                            li Вы не выбрали сервер для игры
+                form.ui-base-form.form-main(action="/" method="POST")
+                    label.ui-form-group
+                        input(type="email" required)
+                        span.title Ваша электронная почта для связи
+                    label.ui-form-group
+                        input(type="text" required)
+                        span.title Ваш игровой ник
+                    label.ui-form-group
+                        textarea(type="text" rows="5" required)
+                        span.title Расскажите о себе
+                    label.ui-form-group
+                        textarea(type="text" rows="3" required)
+                        span.title Почему вы хотите играть у нас?
+                    label.ui-form-group
+                        textarea(type="text" rows="3" required)
+                        span.title Как вы о нас узнали?
+                    label.ui-form-group
+                        input(type="text" required)
+                        span.title Данные для связи (вк, discord)
+                    label.ui-form-group
+                        select Сервер для игры
+                            option Сервер #1
+                            option Сервер #2
+                            option Сервер #3
+                    button.ui-button(type="submit") Отправить заявку

@@ -34,11 +34,11 @@ label.ui-form-group {
         transition: 0.2s;
     }
 
-    & > textarea + span.title{
+    & > textarea + span.title {
         top: 33px;
     }
 
-    & > input, & > textarea {
+    & > input, & > textarea{
         padding: 10px;
         padding-top: 15px;
         margin-top: 10px;
@@ -49,5 +49,14 @@ label.ui-form-group {
         &:focus ~ span.title, &:valid ~ span.title {
             top: 10px;
         }
+    }
+
+    & > select {
+        padding: 10px;
+        margin-top: 10px;
+        border: 1px solid #c3c3c3;
+        background: #f4f3ef;
+        width: 100%;
+        color: #636363;
     }
 }
