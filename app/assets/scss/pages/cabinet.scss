@@ -1,0 +1,53 @@
+.ui-base-block.cabinet {
+    .ui-base-element.left {
+        display: flex;
+        align-items: flex-start;
+        padding: 0px;
+        width: 365px;
+        justify-content: space-between;
+
+        & > .controls {
+            display: flex;
+            flex-direction: column;
+            border-left: 1px solid #c3c3c3;
+            border-bottom: 1px solid #c3c3c3;
+
+            & > button {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 5px;
+                height: 60px;
+                width: 60px;
+                justify-content: center;
+                position: relative;
+                
+                &.active {
+                    background-color: #e9e8e8;
+                }
+
+                &::before { //Костыли, да
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    width: 100%;
+                    height: 100%;
+                    content: '';
+                }
+
+                & > span {
+                    font-size: 12px;
+                    margin-top: 3px;
+                }
+
+                &:not(:last-child) {
+                    border-bottom: 1px solid #c3c3c3;
+                }
+
+                &#fly > .ui-icon {
+                    font-size: 7px;
+                }
+            }
+        }
+    }
+}

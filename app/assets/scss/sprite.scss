@@ -8,7 +8,7 @@
     display: inline-block;
     background-image: url("../media/sprite.svg");
     background-repeat: no-repeat;
-    background-size: 2.4em 26.4em;
+    background-size: 3.2em 36.8em;
 }
 
 .no-svg .ui-icon:before {
@@ -71,8 +71,35 @@
 
 
 
-  .ui-icon.ui-icon-messages:before {
+  .ui-icon.ui-icon-fly-directions:before {
       background-position: 0em -14.4em;
+      width: 3.2em;
+      height: 3.2em;
+  }
+
+
+
+
+  .ui-icon.ui-icon-messages:before {
+      background-position: 0em -17.6em;
+      width: 2.4em;
+      height: 2.4em;
+  }
+
+
+
+
+  .ui-icon.ui-icon-pause:before {
+      background-position: 0em -20em;
+      width: 2.4em;
+      height: 2.4em;
+  }
+
+
+
+
+  .ui-icon.ui-icon-run-directions:before {
+      background-position: 0em -22.4em;
       width: 2.4em;
       height: 2.4em;
   }
@@ -81,7 +108,7 @@
 
 
   .ui-icon.ui-icon-shield:before {
-      background-position: 0em -16.8em;
+      background-position: 0em -24.8em;
       width: 2.4em;
       height: 2.4em;
   }
@@ -90,7 +117,7 @@
 
 
   .ui-icon.ui-icon-user:before {
-      background-position: 0em -19.2em;
+      background-position: 0em -27.2em;
       width: 2.4em;
       height: 2.4em;
   }
@@ -99,7 +126,7 @@
 
 
   .ui-icon.ui-icon-user-check:before {
-      background-position: 0em -21.6em;
+      background-position: 0em -29.6em;
       width: 2.4em;
       height: 2.4em;
   }
@@ -108,7 +135,16 @@
 
 
   .ui-icon.ui-icon-user-plus:before {
-      background-position: 0em -24em;
+      background-position: 0em -32em;
+      width: 2.4em;
+      height: 2.4em;
+  }
+
+
+
+
+  .ui-icon.ui-icon-walk-directions:before {
+      background-position: 0em -34.4em;
       width: 2.4em;
       height: 2.4em;
   }

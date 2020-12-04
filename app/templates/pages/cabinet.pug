@@ -10,6 +10,15 @@ block content
             .ui-base-element.left
                 canvas#skin-container(skin-path="assets/media/images/skin.png", cloak-path="assets/media/images/cloak.png")
                 .controls
-                    button#walk
+                    button.active#walk
+                        +icon('walk-directions')
+                        span Идти
                     button#run
+                        +icon('run-directions')
+                        span Бежать
                     button#fly
+                        +icon('fly-directions')
+                        span Лететь
+                    button#stop
+                        +icon('pause')
+                        span Пауза
