@@ -4,6 +4,7 @@ mixin monitoring()
             each name in ['HiTech', 'Magic', 'Event', 'RPG']
                 .ui-base-element.monitoring-element(data-percent="56")
                     .left-group
+                        .online-progress(style="height: 56%")
                         .online 56%
                     .right-group
                         .header-group

@@ -44,16 +44,16 @@
             width: 100%;
             border-right: 1px solid $color-border-base-block;
             position: relative;
+            overflow: hidden;
 
             .online {
                 position: relative;
                 z-index: 1;
             }
 
-            &::before {
+            .online-progress {
                 position: absolute;
                 width: 100%;
-                height: 56%;
                 background: $color-border-base-block;
                 opacity: 0.5;
                 content: '';
