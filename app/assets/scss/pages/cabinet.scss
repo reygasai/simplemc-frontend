@@ -1,10 +1,21 @@
 .ui-base-block.cabinet {
+    @include screen('sm', 'max') {
+        .ui-base-block-group.row {
+            flex-direction: column;
+        }
+    }
+
     .ui-base-element.skin-view {
         display: flex;
         align-items: flex-start;
         padding: 0px;
         width: 365px;
         justify-content: space-between;
+
+        @include screen('sm', 'max') {
+            width: 100%;
+            margin-bottom: 25px;
+        }
 
         & > .controls {
             display: flex;
@@ -58,6 +69,10 @@
         display: flex;
         flex-direction: column;
 
+        @include screen('sm', 'max') {
+            margin-left: 0px;
+        }
+
         & > .ui-base-element.info {
             margin-bottom: 25px;
             .info-group {
@@ -85,8 +100,19 @@
             display: flex;
             justify-content: space-between;
 
+            @include screen('lg', 'max') {
+                flex-direction: column;
+            }
+
             & > .ui-base-element.upload-element {
                 width: 48%;
+
+                @include screen('lg', 'max') {
+                    width: 100%;
+                    &:not(:last-child) {
+                        margin-bottom: 25px;
+                    }
+                }
 
                 .title-upload-block {
                     margin-bottom: 30px;

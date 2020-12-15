@@ -5,6 +5,9 @@ export default class Cabinet {
     constructor() {
         this.skinContainer = document.getElementById('skin-container');
         this.controlsContainer = document.querySelector('.controls');
+
+        this.widthWindow = window.innerWidth;
+        this.startMobileWidht = 400;
     }
     
     init() {
@@ -15,8 +18,8 @@ export default class Cabinet {
     initSkin() {
         this.skinObj = new skinview3d.SkinViewer({
             canvas: this.skinContainer,
-            width: 300,
-            height: 400,
+            width: (this.widthWindow >= this.startMobileWidht) ? 300 : 200,
+            height: (this.widthWindow >= this.startMobileWidht) ? 400 : 266,
             skin: "img/skin.png"
         });
 
