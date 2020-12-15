@@ -1,5 +1,5 @@
 .ui-base-block.cabinet {
-    .ui-base-element.left {
+    .ui-base-element.skin-view {
         display: flex;
         align-items: flex-start;
         padding: 0px;
@@ -46,6 +46,117 @@
 
                 &#fly > .ui-icon {
                     font-size: 7px;
+                }
+            }
+        }
+    }
+
+    .right {
+        flex-grow: 1;
+        width: 100%;
+        margin-left: 25px;
+        display: flex;
+        flex-direction: column;
+
+        & > .ui-base-element.info {
+            margin-bottom: 25px;
+            .info-group {
+                margin-bottom: 10px;
+                display: flex;
+                justify-content: space-between;
+                padding-bottom: 5px;
+                
+                &:not(:last-child) {
+                    border-bottom: 1px solid #c3c3c3;
+                }
+                
+                &:last-child {
+                    margin-bottom: 0px;
+                    padding-bottom: 0px;
+                }
+
+                & > .left-text {
+                    font-weight: 900;
+                }
+            }
+        }
+
+        & > .skin-upload-block {
+            display: flex;
+            justify-content: space-between;
+
+            & > .ui-base-element.upload-element {
+                width: 48%;
+
+                .title-upload-block {
+                    margin-bottom: 30px;
+                    padding-bottom: 15px;
+                    text-align: center;
+                    border-bottom: 1px solid #c3c3c3;
+                    font-size: 18px;
+                    font-family: "TT Norms Bold", sans-serif;
+                }
+
+                .upload-controls-group {
+                    display: flex;
+                    justify-content: space-between;
+
+                    & > button.ui-button {
+                        flex-grow: 1;
+                        text-align: center;
+                        display: block;
+
+                        &:not(:last-child) {
+                            margin-right: 10px;
+                        }
+                    }
+
+                    & > label.select-file {
+                        position: relative;
+                        display: flex;
+                        justify-content: space-between;
+                        cursor: pointer;
+                        width: 100%;
+                        margin-bottom: 20px;
+                        border-bottom: 1px solid #e6e4e4;
+                        padding-bottom: 10px;
+                        z-index: 1;
+
+                        &::before {
+                            position: absolute;
+                            width: 100%;
+                            height: 100%;
+                            content: '';
+                            display: block;
+                            z-index: 10;
+                            left: 0;
+                            top: 0;
+                        }
+    
+                        & > input {
+                            position: absolute;
+                            opacity: 0;
+                            width: 100%;
+                            top: 0;
+                            left: 0;
+                            height: 100%;
+                            cursor: pointer;
+                        }
+
+                        & > .file {
+                            display: flex;
+                            align-items: center;
+                            z-index: 1;
+                            
+                            & > .name {
+                                margin-right: 5px;
+                            }
+
+                            & > .ui-icon {
+                                font-size: 8px;
+                            }
+                        }
+                    }
                 }
             }
         }

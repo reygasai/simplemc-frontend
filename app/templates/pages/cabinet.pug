@@ -7,18 +7,60 @@ block content
     .ui-base-block.cabinet
         h2.title Личный кабинет reygasai
         .ui-base-block-group.row
-            .ui-base-element.left
-                canvas#skin-container(skin-path="assets/media/images/skin.png", cloak-path="assets/media/images/cloak.png")
-                .controls
-                    button.active#walk
-                        +icon('walk-directions')
-                        span Идти
-                    button#run
-                        +icon('run-directions')
-                        span Бежать
-                    button#fly
-                        +icon('fly-directions')
-                        span Лететь
-                    button#stop
-                        +icon('pause')
-                        span Пауза
+            .left
+                .ui-base-element.skin-view
+                    canvas#skin-container(skin-path="assets/media/images/skin.png", cloak-path="assets/media/images/cloak.png")
+                    .controls
+                        button.active#walk
+                            +icon('walk-directions')
+                            span Идти
+                        button#run
+                            +icon('run-directions')
+                            span Бежать
+                        button#fly
+                            +icon('fly-directions')
+                            span Лететь
+                        button#stop
+                            +icon('pause')
+                            span Стоп
+            .right
+                .ui-base-element.info
+                    .info-group
+                        .left-text Ник:
+                        .right-text reygasai
+                    .info-group
+                        .left-text Зарегистрирован:
+                        .right-text 15.12.2020
+                    .info-group
+                        .left-text Последняя активность:
+                        .right-text 15.12.2020
+                    .info-group
+                        .left-text Играет на сервере:
+                        .right-text HiTech
+                .skin-upload-block
+                    .ui-base-element.upload-element
+                        .title-upload-block Управление скином персонажа
+                        form(action="/", method="POST").ui-base-form
+                            .upload-controls-group
+                                label(for="skin-upload-link", id="skin-upload").select-file
+                                    input(type="file", name="skin", id="skin-upload-link").select-file-input
+                                    .name Файл не выбран
+                                    .file
+                                        .name Выбрать Файл
+                                        +icon('folder-plus')
+                            .upload-controls-group
+                                button(type="submit", name="load").ui-button Загрузить скин
+                                button(type="submit", name="drop").ui-button Удалить скин
+                    .ui-base-element.upload-element
+                        .title-upload-block Управление плащом персонажа
+                        form(action="/", method="POST").ui-base-form
+                            .upload-controls-group
+                                label(for="cloak-upload-link", id="cloak-upload").select-file
+                                    input(type="file", name="cloak", id="cloak-upload-link").select-file-input
+                                    .name Файл не выбран
+                                    .file
+                                        .name Выбрать Файл
+                                        +icon('folder-plus')
+                            .upload-controls-group
+                                button(type="submit", name="load").ui-button Загрузить плащ
+                                button(type="submit", name="drop").ui-button Удалить плащ

@@ -9,6 +9,7 @@ export default class Cabinet {
     
     init() {
         this.initSkin();
+        this.uploadHandleInit();
     }
 
     initSkin() {
@@ -57,12 +58,18 @@ export default class Cabinet {
         this.controlsContainer.addEventListener('click', (event) => {
             let target = event.target;
 
-            if(target.tagName !== 'BUTTON' || target.id === 'stop') {
+            console.log(target.id);
+
+            if(target.tagName !== 'BUTTON') {
                 return;
-            }
+            } 
 
             replaceActiveClass(this.controlsContainer, target);
-            defaultAnimation.resetAndRemove();
+
+            if(target.id !== "stop") {
+                this.skinObj.animations.paused = false;
+                defaultAnimation.resetAndRemove();
+            }
 
             switch(target.id) {
                 case 'walk':
@@ -73,7 +80,36 @@ export default class Cabinet {
 
                 case 'fly':
                     return defaultAnimation = this.skinObj.animations.add(skinview3d.FlyingAnimation);
+
+                case 'stop':
+                    return this.skinObj.animations.paused = true;
             }
+        });
+    }
+
+    uploadHandleInit() {
+        let fileInputContainers = document.querySelectorAll('.select-file');
+
+        if(fileInputContainers === undefined) {
+            return;
+        }
+
+        fileInputContainers.forEach((inputContainer) => {
+            let fileInputTitle = inputContainer.querySelector('.name');
+            let fileName = inputContainer.querySelector('.file').querySelector('.name');
+
+            let fileInput = inputContainer.querySelector('.select-file-input');
+            fileInput.addEventListener('change', (event) => {
+                let target = event.target;
+                let filesList = target.files;
+
+                if(filesList.length > 0) {
+                    let firstFile = filesList[0];
+                    fileInputTitle.innerHTML = firstFile.name;
+
+                    fileName.innerHTML = 'Файл выбран';
+                }
+            });
         });
     }
 }

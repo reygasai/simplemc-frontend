@@ -50,7 +50,7 @@
             flex-direction: column;
         }
 
-        & > .ui-base-element {
+        .ui-base-element {
             border: 1px solid $color-border-base-block;
             padding: 20px;
         }
